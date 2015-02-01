@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="JMViewController" sceneMemberID="viewController">
@@ -15,8 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <webView appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuf-pu-xp4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyt-QU-9Ka" customClass="JMHoledView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17972750576981478" green="1" blue="0.17896871349986143" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nuf-pu-xp4" secondAttribute="trailing" id="5SY-Tp-Il0"/>
+                            <constraint firstAttribute="trailing" secondItem="Iyt-QU-9Ka" secondAttribute="trailing" id="9wN-Nh-RrU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Iyt-QU-9Ka" secondAttribute="bottom" id="UyG-5S-hJJ"/>
+                            <constraint firstItem="nuf-pu-xp4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hJN-Mh-umV"/>
+                            <constraint firstItem="Iyt-QU-9Ka" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="hXS-lP-PNa"/>
+                            <constraint firstItem="Iyt-QU-9Ka" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ic5-DS-Qgn"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="nuf-pu-xp4" secondAttribute="bottom" id="ssV-cK-Di7"/>
+                            <constraint firstItem="nuf-pu-xp4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="zSz-m8-dqe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="holedView" destination="Iyt-QU-9Ka" id="qM9-LX-V8U"/>
+                        <outlet property="webView" destination="nuf-pu-xp4" id="mKO-5d-vfQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

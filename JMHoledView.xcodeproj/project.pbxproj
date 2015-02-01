@@ -22,6 +22,7 @@
 		C252CA811A7E02EC00145A39 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA601A7E02EC00145A39 /* UIKit.framework */; };
 		C252CA891A7E02EC00145A39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C252CA871A7E02EC00145A39 /* InfoPlist.strings */; };
 		C252CA8B1A7E02EC00145A39 /* JMHoledViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA8A1A7E02EC00145A39 /* JMHoledViewTests.m */; };
+		C252CA971A7E031A00145A39 /* JMHoledView.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA961A7E031A00145A39 /* JMHoledView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		C252CA861A7E02EC00145A39 /* JMHoledViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JMHoledViewTests-Info.plist"; sourceTree = "<group>"; };
 		C252CA881A7E02EC00145A39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C252CA8A1A7E02EC00145A39 /* JMHoledViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMHoledViewTests.m; sourceTree = "<group>"; };
+		C252CA951A7E031A00145A39 /* JMHoledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMHoledView.h; sourceTree = "<group>"; };
+		C252CA961A7E031A00145A39 /* JMHoledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMHoledView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 		C252CA5B1A7E02EC00145A39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C252CA941A7E031A00145A39 /* JMHoledView */,
 				C252CA5C1A7E02EC00145A39 /* Foundation.framework */,
 				C252CA5E1A7E02EC00145A39 /* CoreGraphics.framework */,
 				C252CA601A7E02EC00145A39 /* UIKit.framework */,
@@ -153,6 +157,16 @@
 				C252CA871A7E02EC00145A39 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C252CA941A7E031A00145A39 /* JMHoledView */ = {
+			isa = PBXGroup;
+			children = (
+				C252CA951A7E031A00145A39 /* JMHoledView.h */,
+				C252CA961A7E031A00145A39 /* JMHoledView.m */,
+			);
+			name = JMHoledView;
+			path = JMHoledView/JMHoledView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +270,7 @@
 			files = (
 				C252CA691A7E02EC00145A39 /* main.m in Sources */,
 				C252CA761A7E02EC00145A39 /* JMViewController.m in Sources */,
+				C252CA971A7E031A00145A39 /* JMHoledView.m in Sources */,
 				C252CA6D1A7E02EC00145A39 /* JMAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
