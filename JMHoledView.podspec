@@ -10,11 +10,11 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/leverdeterre/JMHoledView"
-  s.screenshots  = "https://github.com/leverdeterre/JMHoledView/screenshots/demo1.png"
+  s.screenshots  = "https://raw.githubusercontent.com/leverdeterre/JMHoledView/master/screenshots/demo1.png"
 
   s.license      = 'MIT'
   s.author       = { "jerome Morissard" => "morissardj@gmail.com" }
-  s.platform     = :ios, '4.3'
+  s.platform     = :ios, '5.0'
   s.source       = { :git => "https://github.com/leverdeterre/JMHoledView.git", :tag => "0.0.1" }
   s.source_files = 'Classes', 'JMHoledView/JMHoledView/*.{h,m}'
   s.public_header_files = 'JMHoledView/JMHoledView/*.h'
