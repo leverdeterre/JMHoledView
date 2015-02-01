@@ -16,16 +16,9 @@
 
 @implementation JMViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
     NSURL *url = [NSURL URLWithString:@"http://www.google.fr"];
     NSURLRequest *rquest = [[NSURLRequest alloc] initWithURL:url];
     [self.webView loadRequest:rquest];
@@ -39,11 +32,17 @@
     [self.holedView addHoleRectOnRect:CGRectMake(10.0f, 250.0f, 300.0f, 30.0f)];
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    self.holedView.holeViewDelegate = self;
+    [self.holedView addHoleRoundedRectOnRect:CGRectMake(10.0f, 250.0f, 300.0f, 30.0f) withCornerRadius:10.0f];
+}
+
 #pragma mark - JMHoledViewDelegate
 
 - (void)holedView:(JMHoledView *)holedView didSelectHoleAtIndex:(NSUInteger)index
 {
-    NSLog(@"%s %d", __PRETTY_FUNCTION__,index);
+    NSLog(@"%s %ld", __PRETTY_FUNCTION__,(long)index);
 }
 
 @end
