@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C252CA5D1A7E02EC00145A39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA5C1A7E02EC00145A39 /* Foundation.framework */; };
+		C252CA5F1A7E02EC00145A39 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA5E1A7E02EC00145A39 /* CoreGraphics.framework */; };
+		C252CA611A7E02EC00145A39 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA601A7E02EC00145A39 /* UIKit.framework */; };
+		C252CA671A7E02EC00145A39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C252CA651A7E02EC00145A39 /* InfoPlist.strings */; };
+		C252CA691A7E02EC00145A39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA681A7E02EC00145A39 /* main.m */; };
+		C252CA6D1A7E02EC00145A39 /* JMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA6C1A7E02EC00145A39 /* JMAppDelegate.m */; };
+		C252CA701A7E02EC00145A39 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C252CA6E1A7E02EC00145A39 /* Main_iPhone.storyboard */; };
+		C252CA731A7E02EC00145A39 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C252CA711A7E02EC00145A39 /* Main_iPad.storyboard */; };
+		C252CA761A7E02EC00145A39 /* JMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA751A7E02EC00145A39 /* JMViewController.m */; };
+		C252CA781A7E02EC00145A39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C252CA771A7E02EC00145A39 /* Images.xcassets */; };
+		C252CA7F1A7E02EC00145A39 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA7E1A7E02EC00145A39 /* XCTest.framework */; };
+		C252CA801A7E02EC00145A39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA5C1A7E02EC00145A39 /* Foundation.framework */; };
+		C252CA811A7E02EC00145A39 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA601A7E02EC00145A39 /* UIKit.framework */; };
+		C252CA891A7E02EC00145A39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C252CA871A7E02EC00145A39 /* InfoPlist.strings */; };
+		C252CA8B1A7E02EC00145A39 /* JMHoledViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA8A1A7E02EC00145A39 /* JMHoledViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C252CA821A7E02EC00145A39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C252CA511A7E02EC00145A39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C252CA581A7E02EC00145A39;
+			remoteInfo = JMHoledView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C252CA591A7E02EC00145A39 /* JMHoledView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMHoledView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C252CA5C1A7E02EC00145A39 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C252CA5E1A7E02EC00145A39 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C252CA601A7E02EC00145A39 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C252CA641A7E02EC00145A39 /* JMHoledView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JMHoledView-Info.plist"; sourceTree = "<group>"; };
+		C252CA661A7E02EC00145A39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C252CA681A7E02EC00145A39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C252CA6A1A7E02EC00145A39 /* JMHoledView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JMHoledView-Prefix.pch"; sourceTree = "<group>"; };
+		C252CA6B1A7E02EC00145A39 /* JMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMAppDelegate.h; sourceTree = "<group>"; };
+		C252CA6C1A7E02EC00145A39 /* JMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMAppDelegate.m; sourceTree = "<group>"; };
+		C252CA6F1A7E02EC00145A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		C252CA721A7E02EC00145A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		C252CA741A7E02EC00145A39 /* JMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMViewController.h; sourceTree = "<group>"; };
+		C252CA751A7E02EC00145A39 /* JMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMViewController.m; sourceTree = "<group>"; };
+		C252CA771A7E02EC00145A39 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C252CA7D1A7E02EC00145A39 /* JMHoledViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMHoledViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C252CA7E1A7E02EC00145A39 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C252CA861A7E02EC00145A39 /* JMHoledViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JMHoledViewTests-Info.plist"; sourceTree = "<group>"; };
+		C252CA881A7E02EC00145A39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C252CA8A1A7E02EC00145A39 /* JMHoledViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMHoledViewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C252CA561A7E02EC00145A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C252CA5F1A7E02EC00145A39 /* CoreGraphics.framework in Frameworks */,
+				C252CA611A7E02EC00145A39 /* UIKit.framework in Frameworks */,
+				C252CA5D1A7E02EC00145A39 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C252CA7A1A7E02EC00145A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C252CA7F1A7E02EC00145A39 /* XCTest.framework in Frameworks */,
+				C252CA811A7E02EC00145A39 /* UIKit.framework in Frameworks */,
+				C252CA801A7E02EC00145A39 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C252CA501A7E02EC00145A39 = {
+			isa = PBXGroup;
+			children = (
+				C252CA621A7E02EC00145A39 /* JMHoledView */,
+				C252CA841A7E02EC00145A39 /* JMHoledViewTests */,
+				C252CA5B1A7E02EC00145A39 /* Frameworks */,
+				C252CA5A1A7E02EC00145A39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C252CA5A1A7E02EC00145A39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C252CA591A7E02EC00145A39 /* JMHoledView.app */,
+				C252CA7D1A7E02EC00145A39 /* JMHoledViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C252CA5B1A7E02EC00145A39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C252CA5C1A7E02EC00145A39 /* Foundation.framework */,
+				C252CA5E1A7E02EC00145A39 /* CoreGraphics.framework */,
+				C252CA601A7E02EC00145A39 /* UIKit.framework */,
+				C252CA7E1A7E02EC00145A39 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C252CA621A7E02EC00145A39 /* JMHoledView */ = {
+			isa = PBXGroup;
+			children = (
+				C252CA6B1A7E02EC00145A39 /* JMAppDelegate.h */,
+				C252CA6C1A7E02EC00145A39 /* JMAppDelegate.m */,
+				C252CA6E1A7E02EC00145A39 /* Main_iPhone.storyboard */,
+				C252CA711A7E02EC00145A39 /* Main_iPad.storyboard */,
+				C252CA741A7E02EC00145A39 /* JMViewController.h */,
+				C252CA751A7E02EC00145A39 /* JMViewController.m */,
+				C252CA771A7E02EC00145A39 /* Images.xcassets */,
+				C252CA631A7E02EC00145A39 /* Supporting Files */,
+			);
+			path = JMHoledView;
+			sourceTree = "<group>";
+		};
+		C252CA631A7E02EC00145A39 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C252CA641A7E02EC00145A39 /* JMHoledView-Info.plist */,
+				C252CA651A7E02EC00145A39 /* InfoPlist.strings */,
+				C252CA681A7E02EC00145A39 /* main.m */,
+				C252CA6A1A7E02EC00145A39 /* JMHoledView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C252CA841A7E02EC00145A39 /* JMHoledViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				C252CA8A1A7E02EC00145A39 /* JMHoledViewTests.m */,
+				C252CA851A7E02EC00145A39 /* Supporting Files */,
+			);
+			path = JMHoledViewTests;
+			sourceTree = "<group>";
+		};
+		C252CA851A7E02EC00145A39 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C252CA861A7E02EC00145A39 /* JMHoledViewTests-Info.plist */,
+				C252CA871A7E02EC00145A39 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C252CA581A7E02EC00145A39 /* JMHoledView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C252CA8E1A7E02EC00145A39 /* Build configuration list for PBXNativeTarget "JMHoledView" */;
+			buildPhases = (
+				C252CA551A7E02EC00145A39 /* Sources */,
+				C252CA561A7E02EC00145A39 /* Frameworks */,
+				C252CA571A7E02EC00145A39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JMHoledView;
+			productName = JMHoledView;
+			productReference = C252CA591A7E02EC00145A39 /* JMHoledView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C252CA7C1A7E02EC00145A39 /* JMHoledViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C252CA911A7E02EC00145A39 /* Build configuration list for PBXNativeTarget "JMHoledViewTests" */;
+			buildPhases = (
+				C252CA791A7E02EC00145A39 /* Sources */,
+				C252CA7A1A7E02EC00145A39 /* Frameworks */,
+				C252CA7B1A7E02EC00145A39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C252CA831A7E02EC00145A39 /* PBXTargetDependency */,
+			);
+			name = JMHoledViewTests;
+			productName = JMHoledViewTests;
+			productReference = C252CA7D1A7E02EC00145A39 /* JMHoledViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C252CA511A7E02EC00145A39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jerome Morissard";
+				TargetAttributes = {
+					C252CA7C1A7E02EC00145A39 = {
+						TestTargetID = C252CA581A7E02EC00145A39;
+					};
+				};
+			};
+			buildConfigurationList = C252CA541A7E02EC00145A39 /* Build configuration list for PBXProject "JMHoledView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C252CA501A7E02EC00145A39;
+			productRefGroup = C252CA5A1A7E02EC00145A39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C252CA581A7E02EC00145A39 /* JMHoledView */,
+				C252CA7C1A7E02EC00145A39 /* JMHoledViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C252CA571A7E02EC00145A39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C252CA731A7E02EC00145A39 /* Main_iPad.storyboard in Resources */,
+				C252CA781A7E02EC00145A39 /* Images.xcassets in Resources */,
+				C252CA701A7E02EC00145A39 /* Main_iPhone.storyboard in Resources */,
+				C252CA671A7E02EC00145A39 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C252CA7B1A7E02EC00145A39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C252CA891A7E02EC00145A39 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C252CA551A7E02EC00145A39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C252CA691A7E02EC00145A39 /* main.m in Sources */,
+				C252CA761A7E02EC00145A39 /* JMViewController.m in Sources */,
+				C252CA6D1A7E02EC00145A39 /* JMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C252CA791A7E02EC00145A39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C252CA8B1A7E02EC00145A39 /* JMHoledViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C252CA831A7E02EC00145A39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C252CA581A7E02EC00145A39 /* JMHoledView */;
+			targetProxy = C252CA821A7E02EC00145A39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C252CA651A7E02EC00145A39 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C252CA661A7E02EC00145A39 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C252CA6E1A7E02EC00145A39 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C252CA6F1A7E02EC00145A39 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C252CA711A7E02EC00145A39 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C252CA721A7E02EC00145A39 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C252CA871A7E02EC00145A39 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C252CA881A7E02EC00145A39 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C252CA8C1A7E02EC00145A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C252CA8D1A7E02EC00145A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C252CA8F1A7E02EC00145A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMHoledView/JMHoledView-Prefix.pch";
+				INFOPLIST_FILE = "JMHoledView/JMHoledView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C252CA901A7E02EC00145A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMHoledView/JMHoledView-Prefix.pch";
+				INFOPLIST_FILE = "JMHoledView/JMHoledView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C252CA921A7E02EC00145A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JMHoledView.app/JMHoledView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMHoledView/JMHoledView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JMHoledViewTests/JMHoledViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C252CA931A7E02EC00145A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JMHoledView.app/JMHoledView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JMHoledView/JMHoledView-Prefix.pch";
+				INFOPLIST_FILE = "JMHoledViewTests/JMHoledViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C252CA541A7E02EC00145A39 /* Build configuration list for PBXProject "JMHoledView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C252CA8C1A7E02EC00145A39 /* Debug */,
+				C252CA8D1A7E02EC00145A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C252CA8E1A7E02EC00145A39 /* Build configuration list for PBXNativeTarget "JMHoledView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C252CA8F1A7E02EC00145A39 /* Debug */,
+				C252CA901A7E02EC00145A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C252CA911A7E02EC00145A39 /* Build configuration list for PBXNativeTarget "JMHoledViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C252CA921A7E02EC00145A39 /* Debug */,
+				C252CA931A7E02EC00145A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C252CA511A7E02EC00145A39 /* Project object */;
+}
