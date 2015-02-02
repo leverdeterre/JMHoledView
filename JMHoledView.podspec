@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JMHoledView"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "UIView subclass designed to be filled with holes"
   s.requires_arc = true
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "jerome Morissard" => "morissardj@gmail.com" }
   s.platform     = :ios, '5.0'
-  s.source       = { :git => "https://github.com/leverdeterre/JMHoledView.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/leverdeterre/JMHoledView.git", :tag => "0.0.2" }
   s.source_files = 'Classes', 'JMHoledView/JMHoledView/*.{h,m}'
   s.public_header_files = 'JMHoledView/JMHoledView/*.h'
 end

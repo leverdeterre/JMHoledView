@@ -38,6 +38,14 @@
 
 @implementation JMRoundedRectHole
 @end
+
+@interface JMCustomRectHole : JMRectHole
+@property (strong) UIView *customView;
+@end
+
+@implementation JMCustomRectHole
+@end
+
 @interface JMHoledView ()
 @property (strong, nonatomic) NSMutableArray *holes;  //Array of JMHole
 @end
@@ -82,6 +90,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    [self removeCustomViews];
     CGContextRef context = UIGraphicsGetCurrentContext();
     if (context == nil) {
         return;
@@ -91,6 +100,7 @@
     UIRectFill(rect);
     
     for (JMHole* hole in self.holes) {
+        
         [[UIColor clearColor] setFill];
         
         if (hole.holeType == JMHoleTypeRoundedRect) {
@@ -120,6 +130,8 @@
             CGContextFillEllipseInRect( context, rectInView );
         }
     }
+    
+    [self addCustomViews];
 }
 
 #pragma mark - Add methods
@@ -159,6 +171,25 @@
     return [self.holes indexOfObject:rectHole];
 }
 
+- (NSInteger)addHCustomView:(UIView *)customView onRect:(CGRect)rect
+{
+    JMCustomRectHole *customHole = [JMCustomRectHole new];
+    customHole.holeRect = rect;
+    customHole.customView = customView;
+    customHole.holeType = JMHoleTypeCustomRect;
+    [self.holes addObject:customHole];
+    [self setNeedsDisplay];
+    
+    return [self.holes indexOfObject:customHole];
+}
+
+- (void)removeHoles
+{
+    [self.holes removeAllObjects];
+    [self removeCustomViews];
+    [self setNeedsDisplay];
+}
+
 #pragma mark - Overided setter
 
 - (void)setDimingColor:(UIColor *)dimingColor
@@ -181,7 +212,9 @@
 {    
     __block NSUInteger idxToReturn = NSNotFound;
     [self.holes enumerateObjectsUsingBlock:^(JMHole *hole, NSUInteger idx, BOOL *stop) {
-        if (hole.holeType == JMHoleTypeRoundedRect || hole.holeType == JMHoleTypeRect ) {
+        if (hole.holeType == JMHoleTypeRoundedRect ||
+            hole.holeType == JMHoleTypeRect ||
+            hole.holeType == JMHoleTypeCustomRect) {
             JMRectHole *rectHole = (JMRectHole *)hole;
             if (CGRectContainsPoint(rectHole.holeRect, touchLocation)) {
                 idxToReturn = idx;
@@ -202,6 +235,29 @@
     }];
     
     return idxToReturn;
+}
+
+#pragma mark - Custom Views
+
+- (void)removeCustomViews
+{
+    [self.holes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[JMCustomRectHole class]]) {
+            JMCustomRectHole *hole = (JMCustomRectHole *)obj;
+            [hole.customView removeFromSuperview];
+        }
+    }];
+}
+
+- (void)addCustomViews
+{
+    [self.holes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[JMCustomRectHole class]]) {
+            JMCustomRectHole *hole = (JMCustomRectHole *)obj;
+            [hole.customView setFrame:hole.holeRect];
+            [self addSubview:hole.customView];
+        }
+    }];
 }
 
 @end

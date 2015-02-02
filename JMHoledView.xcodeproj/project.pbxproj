@@ -14,7 +14,6 @@
 		C252CA691A7E02EC00145A39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA681A7E02EC00145A39 /* main.m */; };
 		C252CA6D1A7E02EC00145A39 /* JMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA6C1A7E02EC00145A39 /* JMAppDelegate.m */; };
 		C252CA701A7E02EC00145A39 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C252CA6E1A7E02EC00145A39 /* Main_iPhone.storyboard */; };
-		C252CA731A7E02EC00145A39 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C252CA711A7E02EC00145A39 /* Main_iPad.storyboard */; };
 		C252CA761A7E02EC00145A39 /* JMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C252CA751A7E02EC00145A39 /* JMViewController.m */; };
 		C252CA781A7E02EC00145A39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C252CA771A7E02EC00145A39 /* Images.xcassets */; };
 		C252CA7F1A7E02EC00145A39 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C252CA7E1A7E02EC00145A39 /* XCTest.framework */; };
@@ -47,7 +46,6 @@
 		C252CA6B1A7E02EC00145A39 /* JMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMAppDelegate.h; sourceTree = "<group>"; };
 		C252CA6C1A7E02EC00145A39 /* JMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMAppDelegate.m; sourceTree = "<group>"; };
 		C252CA6F1A7E02EC00145A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		C252CA721A7E02EC00145A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C252CA741A7E02EC00145A39 /* JMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMViewController.h; sourceTree = "<group>"; };
 		C252CA751A7E02EC00145A39 /* JMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMViewController.m; sourceTree = "<group>"; };
 		C252CA771A7E02EC00145A39 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				C252CA6B1A7E02EC00145A39 /* JMAppDelegate.h */,
 				C252CA6C1A7E02EC00145A39 /* JMAppDelegate.m */,
 				C252CA6E1A7E02EC00145A39 /* Main_iPhone.storyboard */,
-				C252CA711A7E02EC00145A39 /* Main_iPad.storyboard */,
 				C252CA741A7E02EC00145A39 /* JMViewController.h */,
 				C252CA751A7E02EC00145A39 /* JMViewController.m */,
 				C252CA771A7E02EC00145A39 /* Images.xcassets */,
@@ -246,7 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C252CA731A7E02EC00145A39 /* Main_iPad.storyboard in Resources */,
 				C252CA781A7E02EC00145A39 /* Images.xcassets in Resources */,
 				C252CA701A7E02EC00145A39 /* Main_iPhone.storyboard in Resources */,
 				C252CA671A7E02EC00145A39 /* InfoPlist.strings in Resources */,
@@ -308,14 +304,6 @@
 				C252CA6F1A7E02EC00145A39 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		C252CA711A7E02EC00145A39 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C252CA721A7E02EC00145A39 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		C252CA871A7E02EC00145A39 /* InfoPlist.strings */ = {
@@ -410,6 +398,7 @@
 				GCC_PREFIX_HEADER = "JMHoledView/JMHoledView-Prefix.pch";
 				INFOPLIST_FILE = "JMHoledView/JMHoledView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -423,6 +412,7 @@
 				GCC_PREFIX_HEADER = "JMHoledView/JMHoledView-Prefix.pch";
 				INFOPLIST_FILE = "JMHoledView/JMHoledView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -486,6 +476,7 @@
 				C252CA901A7E02EC00145A39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C252CA911A7E02EC00145A39 /* Build configuration list for PBXNativeTarget "JMHoledViewTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +485,7 @@
 				C252CA931A7E02EC00145A39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
