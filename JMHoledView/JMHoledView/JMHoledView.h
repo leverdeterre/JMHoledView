@@ -32,4 +32,6 @@ typedef NS_ENUM(NSInteger, JMHoleType)
 - (NSInteger)addHoleRectOnRect:(CGRect)rect;
 - (NSInteger)addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius;
 
+- (void)removeHoles;
+
 @end

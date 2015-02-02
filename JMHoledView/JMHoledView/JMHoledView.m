@@ -159,6 +159,12 @@
     return [self.holes indexOfObject:rectHole];
 }
 
+- (void)removeHoles
+{
+    [self.holes removeAllObjects];
+    [self setNeedsDisplay];
+}
+
 #pragma mark - Overided setter
 
 - (void)setDimingColor:(UIColor *)dimingColor
