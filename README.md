@@ -1,7 +1,11 @@
 # JMHoledView
 A view design to be filled with holes ...
 
-HoleView, holes methods
+## My other librairies
+[Have a look to my other librairies] (http://leverdeterre.github.io)
+
+
+## HoleView, holes methods
 ---------------------------------------------------
 ```objc
 - (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diamter;
