@@ -1,9 +1,10 @@
+## My other works
+
+[http://leverdeterre.github.io] (http://leverdeterre.github.io)
+
+
 # JMHoledView
 A view design to be filled with holes ...
-
-## My other librairies
-[Have a look to my other librairies] (http://leverdeterre.github.io)
-
 
 ## HoleView, holes methods
 ---------------------------------------------------
