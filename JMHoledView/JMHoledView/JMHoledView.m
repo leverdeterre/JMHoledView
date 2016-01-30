@@ -224,7 +224,7 @@
         } else if (hole.holeType == JMHoleTypeCirle) {
             JMCircleHole *circleHole = (JMCircleHole *)hole;
             CGRect rectInView = CGRectMake(floorf(circleHole.holeCenterPoint.x - circleHole.holeDiameter*0.5f),
-                                           floorf(circleHole.holeCenterPoint.x - circleHole.holeDiameter*0.5f),
+                                           floorf(circleHole.holeCenterPoint.y - circleHole.holeDiameter*0.5f),
                                            circleHole.holeDiameter,
                                            circleHole.holeDiameter);
             if (CGRectContainsPoint(rectInView, touchLocation)) {
