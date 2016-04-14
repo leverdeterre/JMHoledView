@@ -36,7 +36,15 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     self.holedView.holeViewDelegate = self;
-    [self.holedView addHoleRoundedRectOnRect:CGRectMake(10.0f, 250.0f, 300.0f, 30.0f) withCornerRadius:10.0f];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 50.0f) andDiameter:40.0f withText:@"Left Text" onPosition:JMPositionLeft withMargin:10.0f];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 100.0f) andDiameter:40.0f withText:@"Right Text" onPosition:JMPositionRight withMargin:10.0f];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 160.0f) andDiameter:40.0f withText:@"Top Text" onPosition:JMPositionTop withMargin:0];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 210.0f) andDiameter:40.0f withText:@"Bottom Text" onPosition:JMPositionBottom withMargin:0];
+    
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(100.0f, 300.0f) andDiameter:40.0f withText:@"Top Left" onPosition:JMPositionTopLeftCorner withMargin:0];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(200.0f, 300.0f) andDiameter:40.0f withText:@"Top Right" onPosition:JMPositionTopRightCorner withMargin:0];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(100.0f, 350.0f) andDiameter:40.0f withText:@"Bottom Left" onPosition:JMPositionBottomLeftCorner withMargin:0];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(200.0f, 350.0f) andDiameter:40.0f withText:@"Bottom Right" onPosition:JMPositionBottomRightCorner withMargin:0];
 }
 
 #pragma mark - JMHoledViewDelegate

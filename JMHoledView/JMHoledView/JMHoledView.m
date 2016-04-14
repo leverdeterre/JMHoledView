@@ -9,6 +9,7 @@
 #import "JMHoledView.h"
 
 #pragma mark - holes objects
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 @interface JMHole : NSObject
 @property (assign) JMHoleType holeType;
@@ -183,11 +184,103 @@
     return [self.holes indexOfObject:customHole];
 }
 
+- (void) addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter withText:(NSString *)text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin
+{
+    
+    [self addHoleCircleCenteredOnPosition:centerPoint andDiameter:diameter];
+    [self buildLabel:centerPoint holeWidth:diameter holeHeight:diameter withText:text onPosition:pos withMargin:margin];
+    
+}
+
+- (void) addHoleRectOnRect:(CGRect)rect withText:(NSString *)text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin
+{
+    [self addHoleRectOnRect:rect];
+    [self buildLabel:CGPointMake(rect.origin.x+(rect.size.width/2),rect.origin.y+(rect.size.height/2)) holeWidth:rect.size.width holeHeight:rect.size.height withText:text onPosition:pos withMargin:margin];
+}
+
+-(void) addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius withText:(NSString *)text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin
+{
+    [self addHoleRoundedRectOnRect:rect withCornerRadius:cornerRadius];
+    [self buildLabel:CGPointMake(rect.origin.x+(rect.size.width/2),rect.origin.y+(rect.size.height/2)) holeWidth:rect.size.width holeHeight:rect.size.height withText:text onPosition:pos withMargin:margin];
+}
+
 - (void)removeHoles
 {
     [self removeCustomViews];
     [self.holes removeAllObjects];
     [self setNeedsDisplay];
+}
+
+-(UILabel*) buildLabel:(CGPoint)point holeWidth:(CGFloat)width holeHeight:(CGFloat)height withText:(NSString*) text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin{
+    
+    CGPoint centerPoint = point;
+    CGFloat holeWidthHalf = (width/2) + margin;
+    CGFloat holeHeightHalf = (height/2) + margin;
+    
+    CGRect frame;
+    CGSize fontSize;
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        // code here for iOS 5.0,6.0 and so on
+        fontSize = [text sizeWithFont:[UIFont systemFontOfSize:14.0f]];
+    } else {
+        // code here for iOS 7.0
+        fontSize = [text sizeWithAttributes:
+                    @{NSFontAttributeName:
+                          [UIFont systemFontOfSize:14.0f]}];
+    }
+    CGFloat x;
+    CGFloat y;
+    switch (pos) {
+        case JMPositionTop:
+            x = (centerPoint.x)-(fontSize.width/2);
+            y = (centerPoint.y-holeHeightHalf)-fontSize.height;
+            break;
+        case JMPositionTopRightCorner:
+            x = (centerPoint.x+holeWidthHalf);
+            y = (centerPoint.y-holeHeightHalf)-fontSize.height;
+            break;
+        case JMPositionRight:
+            x = (centerPoint.x+holeWidthHalf);
+            y = (centerPoint.y)-(fontSize.height/2);
+            break;
+        case JMPositionBottomRightCorner:
+            x = centerPoint.x+holeWidthHalf;
+            y = centerPoint.y+holeHeightHalf;
+            break;
+        case JMPositionBottom:
+            x = (centerPoint.x)-(fontSize.width/2);
+            y = (centerPoint.y+holeHeightHalf);
+            break;
+        case JMPositionBottomLeftCorner:
+            x = (centerPoint.x-holeWidthHalf)-(fontSize.width);
+            y = (centerPoint.y+holeHeightHalf);
+            break;
+        case JMPositionLeft:
+            x = (centerPoint.x-holeWidthHalf)-(fontSize.width);
+            y = (centerPoint.y)-(fontSize.height/2);
+            break;
+        case JMPositionTopLeftCorner:
+            x = (centerPoint.x-holeWidthHalf)-(fontSize.width);
+            y = (centerPoint.y-holeHeightHalf)-(fontSize.height/2);
+            break;
+        default:
+            x = centerPoint.x;
+            y = centerPoint.y;
+            break;
+    }
+    frame = CGRectMake(x,y, fontSize.width, fontSize.height);
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor whiteColor]];
+    label.numberOfLines = 2;
+    label.text = text;
+    label.font = [UIFont systemFontOfSize:14.0f];
+    label.textAlignment = NSTextAlignmentCenter;
+    
+    [self addHCustomView:label onRect:frame];
+    
+    return label;
 }
 
 #pragma mark - Overided setter

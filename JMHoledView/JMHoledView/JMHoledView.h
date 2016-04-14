@@ -15,6 +15,17 @@ typedef NS_ENUM(NSInteger, JMHoleType)
     JMHoleTypeRoundedRect,
     JMHoleTypeCustomRect
 };
+typedef NS_ENUM(NSInteger, JMHolePosition)
+{
+    JMPositionTop,
+    JMPositionTopRightCorner,
+    JMPositionRight,
+    JMPositionBottomRightCorner,
+    JMPositionBottom,
+    JMPositionBottomLeftCorner,
+    JMPositionLeft,
+    JMPositionTopLeftCorner
+};
 
 @class JMHoledView;
 @protocol JMHoledViewDelegate <NSObject>
@@ -33,6 +44,11 @@ typedef NS_ENUM(NSInteger, JMHoleType)
 - (NSInteger)addHoleRectOnRect:(CGRect)rect;
 - (NSInteger)addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius;
 - (NSInteger)addHCustomView:(UIView *)customView onRect:(CGRect)rect;
+
+- (void) addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter withText:(NSString *)text onPosition:(JMHolePosition)position withMargin:(CGFloat) margin;
+- (void) addHoleRectOnRect:(CGRect)rect withText:(NSString *)text onPosition:(JMHolePosition)position withMargin:(CGFloat) margin;
+- (void) addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius withText:(NSString *)text onPosition:(JMHolePosition)position withMargin:(CGFloat) margin;
+
 
 - (void)removeHoles;
 
