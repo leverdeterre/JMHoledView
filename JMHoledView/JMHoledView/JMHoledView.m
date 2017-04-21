@@ -21,6 +21,10 @@
 @interface JMCircleHole : JMHole
 @property (assign) CGPoint holeCenterPoint;
 @property (assign) CGFloat holeDiameter;
+/**
+ *  height scale factor（for oval hole）
+ */
+@property (nonatomic, assign) CGFloat hScale;
 @end
 
 @implementation JMCircleHole
@@ -123,9 +127,9 @@
         } else if (hole.holeType == JMHoleTypeCirle) {
             JMCircleHole *circleHole = (JMCircleHole *)hole;
             CGRect rectInView = CGRectMake(floorf(circleHole.holeCenterPoint.x - circleHole.holeDiameter*0.5f),
-                                           floorf(circleHole.holeCenterPoint.y - circleHole.holeDiameter*0.5f),
+                                           floorf(circleHole.holeCenterPoint.y - circleHole.holeDiameter*0.5f) + circleHole.holeDiameter * (1 - circleHole.hScale) * .5f,
                                            circleHole.holeDiameter,
-                                           circleHole.holeDiameter);
+                                           circleHole.holeDiameter * circleHole.hScale);
             CGContextSetFillColorWithColor( context, [UIColor clearColor].CGColor );
             CGContextSetBlendMode(context, kCGBlendModeClear);
             CGContextFillEllipseInRect( context, rectInView );
@@ -136,18 +140,24 @@
 }
 
 #pragma mark - Add methods
-
 - (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter
+{
+    return [self addHoleCircleCenteredOnPosition:centerPoint andDiameter:diameter WithHScale:1.f];
+}
+- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter WithHScale:(CGFloat)hScale
 {
     JMCircleHole *circleHole = [JMCircleHole new];
     circleHole.holeCenterPoint = centerPoint;
     circleHole.holeDiameter = diameter;
+    circleHole.hScale = hScale;
     circleHole.holeType = JMHoleTypeCirle;
     [self.holes addObject:circleHole];
     [self setNeedsDisplay];
     
     return [self.holes indexOfObject:circleHole];
 }
+
+
 
 - (NSInteger)addHoleRectOnRect:(CGRect)rect
 {

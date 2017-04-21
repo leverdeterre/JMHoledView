@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, JMHolePosition)
 @property (weak, nonatomic) id <JMHoledViewDelegate> holeViewDelegate;
 
 - (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diamter;
+- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter WithHScale:(CGFloat)hScale;
 - (NSInteger)addHoleRectOnRect:(CGRect)rect;
 - (NSInteger)addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius;
 - (NSInteger)addHCustomView:(UIView *)customView onRect:(CGRect)rect;

@@ -45,6 +45,9 @@
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(200.0f, 300.0f) andDiameter:40.0f withText:@"Top Right" onPosition:JMPositionTopRightCorner withMargin:0];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(100.0f, 350.0f) andDiameter:40.0f withText:@"Bottom Left" onPosition:JMPositionBottomLeftCorner withMargin:0];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(200.0f, 350.0f) andDiameter:40.0f withText:@"Bottom Right" onPosition:JMPositionBottomRightCorner withMargin:0];
+    
+    // test add oval hole
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 450.0f) andDiameter:50 WithHScale:0.5f];
 }
 
 #pragma mark - JMHoledViewDelegate
