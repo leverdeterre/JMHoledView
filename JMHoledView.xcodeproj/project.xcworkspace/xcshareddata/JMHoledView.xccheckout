@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6D0F41E4-FD97-41C4-B7E6-FAB43E1812D3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JMHoledView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F680B4650B3E340418B15DE0C6215573DDB0C76C</key>
+		<string>https://github.com/leverdeterre/JMHoledView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JMHoledView.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F680B4650B3E340418B15DE0C6215573DDB0C76C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/leverdeterre/JMHoledView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F680B4650B3E340418B15DE0C6215573DDB0C76C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F680B4650B3E340418B15DE0C6215573DDB0C76C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JMHoledView</string>
+		</dict>
+	</array>
+</dict>
+</plist>

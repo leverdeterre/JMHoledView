@@ -52,7 +52,7 @@
 @end
 
 @interface JMHoledView ()
-@property (strong, nonatomic) NSMutableArray *holes;  //Array of JMHole
+@property (strong, nonatomic) NSMutableArray <JMHole *> *holes;  //Array of JMHole
 @end
 
 @implementation JMHoledView
@@ -140,11 +140,13 @@
 }
 
 #pragma mark - Add methods
-- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter
+
+- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint diameter:(CGFloat)diameter
 {
-    return [self addHoleCircleCenteredOnPosition:centerPoint andDiameter:diameter WithHScale:1.f];
+    return [self addHoleCircleCenteredOnPosition:centerPoint diameter:diameter hScale:1.f];
 }
-- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter WithHScale:(CGFloat)hScale
+
+- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint diameter:(CGFloat)diameter hScale:(CGFloat)hScale
 {
     JMCircleHole *circleHole = [JMCircleHole new];
     circleHole.holeCenterPoint = centerPoint;
@@ -170,7 +172,7 @@
     return [self.holes indexOfObject:rectHole];
 }
 
-- (NSInteger)addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius
+- (NSInteger)addHoleRoundedRectOnRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius
 {
     JMRoundedRectHole *rectHole = [JMRoundedRectHole new];
     rectHole.holeRect = rect;
@@ -194,24 +196,47 @@
     return [self.holes indexOfObject:customHole];
 }
 
-- (void) addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter withText:(NSString *)text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin
+- (void)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint
+                                diameter:(CGFloat)diameter
+                                    text:(NSString *)text
+                              onPosition:(JMHolePosition)pos
+                                  margin:(CGFloat) margin
 {
     
-    [self addHoleCircleCenteredOnPosition:centerPoint andDiameter:diameter];
-    [self buildLabel:centerPoint holeWidth:diameter holeHeight:diameter withText:text onPosition:pos withMargin:margin];
+    [self addHoleCircleCenteredOnPosition:centerPoint
+                                 diameter:diameter];
+    
+    [self buildLabel:centerPoint holeWidth:diameter holeHeight:diameter text:text onPosition:pos margin:margin];
     
 }
 
-- (void) addHoleRectOnRect:(CGRect)rect withText:(NSString *)text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin
+- (void)addHoleRectOnRect:(CGRect)rect
+                     text:(NSString *)text
+               onPosition:(JMHolePosition)pos
+                   margin:(CGFloat) margin
 {
     [self addHoleRectOnRect:rect];
-    [self buildLabel:CGPointMake(rect.origin.x+(rect.size.width/2),rect.origin.y+(rect.size.height/2)) holeWidth:rect.size.width holeHeight:rect.size.height withText:text onPosition:pos withMargin:margin];
+    [self buildLabel:CGPointMake(rect.origin.x+(rect.size.width/2),rect.origin.y+(rect.size.height/2))
+           holeWidth:rect.size.width
+          holeHeight:rect.size.height
+            text:text onPosition:pos
+              margin:margin];
 }
 
--(void) addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius withText:(NSString *)text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin
+-(void)addHoleRoundedRectOnRect:(CGRect)rect
+                   cornerRadius:(CGFloat)cornerRadius
+                           text:(NSString *)text
+                     onPosition:(JMHolePosition)pos
+                         margin:(CGFloat) margin
 {
-    [self addHoleRoundedRectOnRect:rect withCornerRadius:cornerRadius];
-    [self buildLabel:CGPointMake(rect.origin.x+(rect.size.width/2),rect.origin.y+(rect.size.height/2)) holeWidth:rect.size.width holeHeight:rect.size.height withText:text onPosition:pos withMargin:margin];
+    [self addHoleRoundedRectOnRect:rect
+                      cornerRadius:cornerRadius];
+    
+    [self buildLabel:CGPointMake(rect.origin.x+(rect.size.width/2),rect.origin.y+(rect.size.height/2))
+           holeWidth:rect.size.width
+          holeHeight:rect.size.height
+                text:text onPosition:pos
+              margin:margin];
 }
 
 - (void)removeHoles
@@ -221,8 +246,13 @@
     [self setNeedsDisplay];
 }
 
--(UILabel*) buildLabel:(CGPoint)point holeWidth:(CGFloat)width holeHeight:(CGFloat)height withText:(NSString*) text onPosition:(JMHolePosition) pos withMargin:(CGFloat) margin{
-    
+-(UILabel*)buildLabel:(CGPoint)point
+            holeWidth:(CGFloat)width
+           holeHeight:(CGFloat)height
+                 text:(NSString*)text
+           onPosition:(JMHolePosition)pos
+               margin:(CGFloat) margin
+{
     CGPoint centerPoint = point;
     CGFloat holeWidthHalf = (width/2) + margin;
     CGFloat holeHeightHalf = (height/2) + margin;
