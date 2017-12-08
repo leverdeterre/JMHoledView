@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, JMHolePosition)
 
 @optional
 - (void)holedView:(JMHoledView *)holedView didSelectHoleAtIndex:(NSUInteger)index;
-- (void)holedView:(JMHoledView *)holedView willAddLabel:(UILabel*)label;
+- (void)holedView:(JMHoledView *)holedView willAddLabel:(UILabel*)label atIndex:(NSUInteger)index;
 
 @end
 

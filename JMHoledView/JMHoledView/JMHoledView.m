@@ -322,9 +322,14 @@
     label.font = self.textFont;
     label.textAlignment = NSTextAlignmentCenter;
     
-    if ([self.holeViewDelegate respondsToSelector:@selector(holedView:willAddLabel:)])
+    if ([self.holeViewDelegate respondsToSelector:@selector(holedView:willAddLabel:atIndex:)])
     {
-        [self.holeViewDelegate holedView:self willAddLabel:label];
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(JMHole *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+            return ![evaluatedObject isKindOfClass:[JMCustomRectHole class]];
+        }];
+        NSArray *labels = [self.holes filteredArrayUsingPredicate:predicate];
+        NSInteger index = labels.count-1;
+        [self.holeViewDelegate holedView:self willAddLabel:label atIndex:index];
     }
     
     [self addHCustomView:label onRect:label.frame];
