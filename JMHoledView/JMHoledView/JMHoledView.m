@@ -317,7 +317,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[UIColor whiteColor]];
-    label.numberOfLines = 2;
+    label.numberOfLines = 0;
     label.text = text;
     label.font = self.textFont;
     label.textAlignment = NSTextAlignmentCenter;
