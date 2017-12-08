@@ -30,7 +30,9 @@ typedef NS_ENUM(NSInteger, JMHolePosition)
 @class JMHoledView;
 @protocol JMHoledViewDelegate <NSObject>
 
+@optional
 - (void)holedView:(JMHoledView *)holedView didSelectHoleAtIndex:(NSUInteger)index;
+- (void)holedView:(JMHoledView *)holedView willAddLabel:(UILabel*)label;
 
 @end
 

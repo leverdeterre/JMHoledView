@@ -322,7 +322,12 @@
     label.font = self.textFont;
     label.textAlignment = NSTextAlignmentCenter;
     
-    [self addHCustomView:label onRect:frame];
+    if ([self.holeViewDelegate respondsToSelector:@selector(holedView:willAddLabel:)])
+    {
+        [self.holeViewDelegate holedView:self willAddLabel:label];
+    }
+    
+    [self addHCustomView:label onRect:label.frame];
     
     return label;
 }
