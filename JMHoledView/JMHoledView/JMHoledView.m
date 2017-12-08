@@ -85,6 +85,7 @@
 
 - (void)setup
 {
+    _textFont = [UIFont systemFontOfSize:14.0f];
     _holes = [NSMutableArray new];
     self.backgroundColor = [UIColor clearColor];
     _dimingColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
@@ -261,12 +262,15 @@
     CGSize fontSize;
     if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
         // code here for iOS 5.0,6.0 and so on
-        fontSize = [text sizeWithFont:[UIFont systemFontOfSize:14.0f]];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        fontSize = [text sizeWithFont:self.textFont];
+#pragma clang diagnostic pop
     } else {
         // code here for iOS 7.0
         fontSize = [text sizeWithAttributes:
                     @{NSFontAttributeName:
-                          [UIFont systemFontOfSize:14.0f]}];
+                          self.textFont}];
     }
     CGFloat x;
     CGFloat y;
@@ -315,7 +319,7 @@
     [label setTextColor:[UIColor whiteColor]];
     label.numberOfLines = 2;
     label.text = text;
-    label.font = [UIFont systemFontOfSize:14.0f];
+    label.font = self.textFont;
     label.textAlignment = NSTextAlignmentCenter;
     
     [self addHCustomView:label onRect:frame];

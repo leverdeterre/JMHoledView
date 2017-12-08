@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, JMHolePosition)
 
 @property (strong, nonatomic) UIColor *dimingColor;
 @property (weak, nonatomic) id <JMHoledViewDelegate> holeViewDelegate;
+@property (strong, nonatomic) UIFont *textFont;
 
 - (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint
                                     diameter:(CGFloat)diamter;
