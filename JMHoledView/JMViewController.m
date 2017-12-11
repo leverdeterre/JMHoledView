@@ -19,7 +19,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSURL *url = [NSURL URLWithString:@"http://www.google.fr"];
+    NSURL *url = [NSURL URLWithString:@"https://github.com/leverdeterre/"];
     NSURLRequest *rquest = [[NSURLRequest alloc] initWithURL:url];
     [self.webView loadRequest:rquest];
     self.webView.delegate = self;
@@ -28,15 +28,15 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     self.holedView.holeViewDelegate = self;
-    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(25.0f, 25.0f) diameter:40.0f];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(25.0f, 40.0f) diameter:40.0f];
     [self.holedView addHoleRectOnRect:CGRectMake(10.0f, 250.0f, 300.0f, 30.0f)];
     [self.holedView addHCustomView:[self viewForDemo] onRect:CGRectMake(60.0f, 350.0f, 200.0f, 50.0f)];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(50.0f, 200.0f) diameter:80.0f text:@"Left text!\n*conditions apply" onPosition:JMPositionLeft margin:10.0f];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     self.holedView.holeViewDelegate = self;
-    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 50.0f) diameter:40.0f text:@"Left text!\n*conditions apply" onPosition:JMPositionLeft margin:10.0f];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 100.0f) diameter:40.0f text:@"Right Text" onPosition:JMPositionRight margin:10.0f];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 160.0f) diameter:40.0f text:@"Top Text" onPosition:JMPositionTop margin:0];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 210.0f) diameter:40.0f text:@"Bottom Text" onPosition:JMPositionBottom margin:0];
