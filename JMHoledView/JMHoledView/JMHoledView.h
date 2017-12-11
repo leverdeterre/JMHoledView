@@ -74,6 +74,12 @@ typedef NS_ENUM(NSInteger, JMHolePosition)
                       onPosition:(JMHolePosition)position
                           margin:(CGFloat)margin;
 
+- (void)addHoleRoundedRectOnRect:(CGRect)rect
+                    cornerRadius:(CGFloat)cornerRadius
+                            attributedText:(NSAttributedString *)text
+                      onPosition:(JMHolePosition)position
+                          margin:(CGFloat)margin;
+
 - (void)removeHoles;
 
 @end

@@ -240,6 +240,26 @@
               margin:margin];
 }
 
+
+
+- (void)addHoleRoundedRectOnRect:(CGRect)rect
+                    cornerRadius:(CGFloat)cornerRadius
+                  attributedText:(NSAttributedString *)text
+                      onPosition:(JMHolePosition)position
+                          margin:(CGFloat)margin
+{
+    [self addHoleRoundedRectOnRect:rect
+                      cornerRadius:cornerRadius];
+    
+    [self buildLabel:CGPointMake(rect.origin.x+(rect.size.width/2),rect.origin.y+(rect.size.height/2))
+           holeWidth:rect.size.width
+          holeHeight:rect.size.height
+            attrText:text
+          onPosition:position
+              margin:margin];
+    
+}
+
 - (void)removeHoles
 {
     [self removeCustomViews];
@@ -250,30 +270,22 @@
 -(UILabel*)buildLabel:(CGPoint)point
             holeWidth:(CGFloat)width
            holeHeight:(CGFloat)height
-                 text:(NSString*)text
+                 attrText:(NSAttributedString*)attrText
            onPosition:(JMHolePosition)pos
                margin:(CGFloat) margin
 {
+    NSString *text = attrText.string;
     CGPoint centerPoint = point;
     CGFloat holeWidthHalf = (width/2) + margin;
     CGFloat holeHeightHalf = (height/2) + margin;
     
     CGRect frame;
-    CGSize fontSize;
-    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
-        // code here for iOS 5.0,6.0 and so on
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        fontSize = [text sizeWithFont:self.textFont];
-#pragma clang diagnostic pop
-    } else {
-        // code here for iOS 7.0
-        fontSize = [text sizeWithAttributes:
-                    @{NSFontAttributeName:
-                          self.textFont}];
-    }
     CGFloat x;
     CGFloat y;
+    
+    NSDictionary *attrs = [attrText attributesAtIndex:0 longestEffectiveRange:nil inRange:NSMakeRange(0, text.length)];
+    CGSize fontSize = [text sizeWithAttributes:
+                attrs];
     switch (pos) {
         case JMPositionTop:
             x = (centerPoint.x)-(fontSize.width/2);
@@ -318,9 +330,8 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[UIColor whiteColor]];
     label.numberOfLines = 0;
-    label.text = text;
-    label.font = self.textFont;
     label.textAlignment = NSTextAlignmentCenter;
+    label.attributedText = attrText;
     
     if ([self.holeViewDelegate respondsToSelector:@selector(holedView:willAddLabel:atIndex:)])
     {
@@ -334,6 +345,22 @@
     
     [self addHCustomView:label onRect:label.frame];
     
+    return label;
+}
+
+-(UILabel*)buildLabel:(CGPoint)point
+            holeWidth:(CGFloat)width
+           holeHeight:(CGFloat)height
+                 text:(NSString*)text
+           onPosition:(JMHolePosition)pos
+               margin:(CGFloat) margin
+{
+    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text
+                                                                     attributes:@{
+                                                                                  NSFontAttributeName:
+                                                                                      self.textFont
+                                                                                  }];
+   UILabel *label = [self buildLabel:point holeWidth:width holeHeight:height attrText:attrString onPosition:pos margin:margin];
     return label;
 }
 
