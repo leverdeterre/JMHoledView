@@ -30,7 +30,9 @@ typedef NS_ENUM(NSInteger, JMHolePosition)
 @class JMHoledView;
 @protocol JMHoledViewDelegate <NSObject>
 
+@optional
 - (void)holedView:(JMHoledView *)holedView didSelectHoleAtIndex:(NSUInteger)index;
+- (void)holedView:(JMHoledView *)holedView willAddLabel:(UILabel*)label atIndex:(NSUInteger)index;
 
 @end
 
@@ -39,6 +41,7 @@ typedef NS_ENUM(NSInteger, JMHolePosition)
 
 @property (strong, nonatomic) UIColor *dimingColor;
 @property (weak, nonatomic) id <JMHoledViewDelegate> holeViewDelegate;
+@property (strong, nonatomic) UIFont *textFont;
 
 - (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint
                                     diameter:(CGFloat)diamter;

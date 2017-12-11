@@ -36,18 +36,19 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     self.holedView.holeViewDelegate = self;
-    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 50.0f) diameter:40.0f text:@"Left Text" onPosition:JMPositionLeft margin:10.0f];
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 50.0f) diameter:40.0f text:@"Left text!\n*conditions apply" onPosition:JMPositionLeft margin:10.0f];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 100.0f) diameter:40.0f text:@"Right Text" onPosition:JMPositionRight margin:10.0f];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 160.0f) diameter:40.0f text:@"Top Text" onPosition:JMPositionTop margin:0];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 210.0f) diameter:40.0f text:@"Bottom Text" onPosition:JMPositionBottom margin:0];
+    
+    // test add oval hole at bottom without label, so no delegate fire for this
+    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 450.0f) diameter:50 hScale:0.5f];
     
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(100.0f, 300.0f) diameter:40.0f text:@"Top Left" onPosition:JMPositionTopLeftCorner margin:0];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(200.0f, 300.0f) diameter:40.0f text:@"Top Right" onPosition:JMPositionTopRightCorner margin:0];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(100.0f, 350.0f) diameter:40.0f text:@"Bottom Left" onPosition:JMPositionBottomLeftCorner margin:0];
     [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(200.0f, 350.0f) diameter:40.0f text:@"Bottom Right" onPosition:JMPositionBottomRightCorner margin:0];
     
-    // test add oval hole
-    [self.holedView addHoleCircleCenteredOnPosition:CGPointMake(150.0f, 450.0f) diameter:50 hScale:0.5f];
 }
 
 #pragma mark - JMHoledViewDelegate
@@ -55,6 +56,25 @@
 - (void)holedView:(JMHoledView *)holedView didSelectHoleAtIndex:(NSUInteger)index
 {
     NSLog(@"%s %ld", __PRETTY_FUNCTION__,(long)index);
+}
+
+-(void)holedView:(JMHoledView *)holedView willAddLabel:(UILabel *)label atIndex:(NSUInteger)index
+{
+    if (index == 0)
+    {
+        label.layer.cornerRadius = 3.f;
+        label.layer.borderWidth = 1.f;
+        label.layer.borderColor = [UIColor whiteColor].CGColor;
+        
+        CGFloat margin = label.layer.borderWidth + 4;
+        CGRect frame = label.frame;
+        frame.origin.x -= margin;
+        frame.origin.y -= margin;
+        frame.size.width += margin*2;
+        frame.size.height += margin*2;
+        label.frame = frame;
+    }
+    
 }
 
 #pragma marl - helper
