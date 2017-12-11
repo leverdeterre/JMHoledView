@@ -9,14 +9,15 @@ A view design to be filled with holes ...
 ## HoleView, holes methods
 ---------------------------------------------------
 ```objc
-- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diamter;
+- (NSInteger)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint diameter:(CGFloat)diamter;
 - (NSInteger)addHoleRectOnRect:(CGRect)rect;
-- (NSInteger)addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius;
+- (NSInteger)addHoleRoundedRectOnRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius;
 - (NSInteger)addHCustomView:(UIView *)customView onRect:(CGRect)rect;
 
-- (void) addHoleCircleCenteredOnPosition:(CGPoint)centerPoint andDiameter:(CGFloat)diameter withText:(NSString *)text onPosition:(JMHolePosition)position withMargin:(CGFloat) margin;
-- (void) addHoleRectOnRect:(CGRect)rect withText:(NSString *)text onPosition:(JMHolePosition)position withMargin:(CGFloat) margin;
-- (void) addHoleRoundedRectOnRect:(CGRect)rect withCornerRadius:(CGFloat)cornerRadius withText:(NSString *)text onPosition:(JMHolePosition)position withMargin:(CGFloat) margin;
+- (void)addHoleCircleCenteredOnPosition:(CGPoint)centerPoint diameter:(CGFloat)diameter withText:(NSString *)text onPosition:(JMHolePosition)position margin:(CGFloat)margin;
+- (void)addHoleRectOnRect:(CGRect)rect withText:(NSString *)text onPosition:(JMHolePosition)position margin:(CGFloat) margin;
+- (void)addHoleRoundedRectOnRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius text:(NSString *)text onPosition:(JMHolePosition)position withMargin:(CGFloat)margin;
+- (void)addHoleRoundedRectOnRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius attributedText:(NSAttributedString *)text onPosition:(JMHolePosition)position margin:(CGFloat)margin;
 ```
 
 
